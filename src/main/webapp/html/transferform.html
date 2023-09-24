@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Transfer Form</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
+	<style type="text/css">
+			.button-success,
+	        .button-error,
+	        .button-warning,
+	        .button-secondary {
+	            color: white;
+	            border-radius: 4px;
+	            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+	        }
+	
+	        .button-success {
+	            background: rgb(28, 184, 65);
+	            /* this is a green */
+	        }
+	
+	        .button-error {
+	            background: rgb(202, 60, 60);
+	            /* this is a maroon */
+	        }
+	
+	        .button-warning {
+	            background: rgb(223, 117, 20);
+	            /* this is an orange */
+	        }
+	
+	        .button-secondary {
+	            background: rgb(66, 184, 221);
+	            /* this is a light blue */
+	        }
+		</style>
+	</head>
+	<body style="padding: 15px">
+			<form method="post" action="/JavaWeb20230803/servlet/transfer" class="pure-form">
+			<fieldset>
+				<legend>翻譯服務器</legend>
+				原文/翻譯: <input type="text" placeholder="請輸入原文或翻譯" id="word" name="word" required /><p />
+				<button type="reset" class="button-warning pure-button">重設</button>
+				<button type="submit" class="pure-button pure-button-primary">傳送</button>
+				<button type="button" onclick="location.href='/JavaWeb20230803/servlet/transfer'" title="點此按鈕可查看所有字典資料" class="button-secondary pure-button">檢視</button>	 
+			</fieldset>
+	</body>
+</html>

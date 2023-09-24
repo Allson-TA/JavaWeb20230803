@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>BMI Form</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
+		<style type="text/css">
+			.button-success,
+	        .button-error,
+	        .button-warning,
+	        .button-secondary {
+	            color: white;
+	            border-radius: 4px;
+	            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+	        }
+	
+	        .button-success {
+	            background: rgb(28, 184, 65);
+	            /* this is a green */
+	        }
+	
+	        .button-error {
+	            background: rgb(202, 60, 60);
+	            /* this is a maroon */
+	        }
+	
+	        .button-warning {
+	            background: rgb(223, 117, 20);
+	            /* this is an orange */
+	        }
+	
+	        .button-secondary {
+	            background: rgb(66, 184, 221);
+	            /* this is a light blue */
+	        }
+		</style>
+	</head>
+	<body style="padding: 15px">
+		
+		<form method="post" action="/JavaWeb20230803/servlet/bmi" class="pure-form"> <!--action執行到哪一個servlet -->
+			<fieldset> <!--fieldset 很多欄位元素的集合 -->
+				<legend>BMI表單輸入</legend>
+				身高: <input type="number" id="h" name="h" required /><p> <!--required 強制要寫 -->
+				體重: <input type="number" id="w" name="w" required="required" /><p>
+				<button type="reset" class="button-warning pure-button">重設</button>
+				<button type="submit" class="pure-button pure-button-primary">傳送</button>
+				<!--body style="padding: 15px 上下排版各留的空間範圍 -->
+			</fieldset>
+		</form>
+		
+	</body>
+</html>

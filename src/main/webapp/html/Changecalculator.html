@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>找零錢計算機</title>
+		<script type="text/javascript">
+			function calculateChange(){
+				//	得到總金額的數字
+				var totalAmount = document.getElementById('totalAmount').value;
+				//	得到購買價的數字
+				var purchasePrice = document.getElementById('purchasePrice').value;
+				//	找錢
+				var change = totalAmount - purchasePrice
+				//	顯示找零總金額
+				var resultDiv1 = document.getElementById('result1');
+				resultDiv1.innerHTML = '找零總金額: ' + change + '元';
+				//	計算每一種硬幣要找幾個
+				var numa = Math.floor(change / 500);
+				console.log(numa);
+				change = change % 500;
+				console.log(change);
+				var numb = Math.floor(change / 100);
+				console.log(numb);
+				change = change % 100;
+				console.log(change);
+				var numFifty = Math.floor(change / 50);	//	floor無條件捨去 50元硬幣有幾個
+				console.log(numFifty);	//	console.log 在網頁上面按f12 進入console(主控台)，會顯示值
+				change = change % 50;	//	扣掉50元硬幣後還剩下多少錢
+				console.log(change);
+				var numTen = Math.floor(change / 10);	//	10元硬幣有幾個
+				console.log(numTen);
+				change = change % 10;	//	扣掉10元硬幣後還剩下多少錢
+				console.log(change);
+				var numFive = Math.floor(change / 5);	//	5元硬幣有幾個
+				console.log(numFive);
+				change = change % 5;	//	扣掉5元硬幣後還剩下多少錢
+				console.log(change);
+				var numOne = change;	//	1元硬幣有幾個
+				
+				var resultDiv2 = document.getElementById('result2');
+				resultDiv2.innerHTML = '500元: ' + numa + '張<br>'+
+									   '100元: ' + numb + '張<br>'+
+									   '50元硬幣: ' + numFifty + '個<br>'+
+									   '10元硬幣: ' + numTen + '個<br>'+
+									   '5元硬幣 : ' + numFive + '個<br>'+
+									   '1元硬幣 : ' + numOne + '個<br>';
+			}
+		</script>
+	</head>
+	<body>
+		<h2>找零錢計算機</h2>
+		總金額: <input type="number" id="totalAmount" name="totalAmount" required /><p>
+		總金額: <input type="number" id="purchasePrice" name="purchasePrice" required /><p>
+		<button onclick="calculateChange()">計算找零</button>
+		
+		<div id="result1">
+			<!-- 顯示找零結果 -->
+		</div>
+		<div id="result2">
+			<!-- 顯示找零結果 每種硬幣 -->
+		</div>		
+		
+	</body>
+</html>
